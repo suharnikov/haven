@@ -1,0 +1,17 @@
+[flake8]
+max-line-length = 120
+max-local-variables = 7
+
+ignore =
+    WPS305, ; Found `f` string
+    WPS306, ; Found class without a base class
+    RST306, ; Unknown target name: "type" (https://github.com/peterjc/flake8-rst-docstrings/issues/26)
+
+
+per-file-ignores =
+    haven/cli.py: DAR101
+
+exclude =
+    .git,
+    __pycache__,
+    .devcontainer,
