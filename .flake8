@@ -5,11 +5,15 @@ max-local-variables = 7
 ignore =
     WPS305, ; Found `f` string
     WPS306, ; Found class without a base class
+    WPS115, ; Found upper-case constant in a class
     RST306, ; Unknown target name: "type" (https://github.com/peterjc/flake8-rst-docstrings/issues/26)
+
 
 
 per-file-ignores =
     haven/cli.py: DAR101
+    test_*.py: D100, D101, D103, S101
+    conftest.py: D100, D101, D103
 
 exclude =
     .git,

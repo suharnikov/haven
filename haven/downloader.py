@@ -143,7 +143,7 @@ class HavenDownloader():
         if not collection_id:
             raise RuntimeError(f'Collection "{collection_name}" not found')
 
-        collection = await client.get_collection(user_name, collection_id)
+        collection = await client.get_wallpapper_list(user_name, collection_id)
         return [
             FileData(
                 name=cast(str, image['path']).rsplit('/', 1)[-1],
@@ -152,10 +152,3 @@ class HavenDownloader():
             )
             for image in collection
         ]
-
-
-def _make_chanks(sequence: list, size: int) -> list:
-    return [
-        sequence[left_value:left_value + size]
-        for left_value in range(0, len(sequence), size)
-    ]
